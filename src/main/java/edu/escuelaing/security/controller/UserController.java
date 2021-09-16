@@ -28,4 +28,12 @@ public class UserController {
         return ResponseEntity.ok( userService.create( userDto ) );
     }
 
+    @PostMapping
+    public ResponseEntity<User> createStole(@RequestBody UserDto userDto )
+    {
+        return ResponseEntity.ok( userService.create( userDto ) );
+    }
+    
+    
+
 }

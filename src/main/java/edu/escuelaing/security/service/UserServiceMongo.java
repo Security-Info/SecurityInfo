@@ -1,5 +1,6 @@
 package edu.escuelaing.security.service;
 
+import edu.escuelaing.security.dto.StoleDto;
 import edu.escuelaing.security.dto.UserDto;
 import edu.escuelaing.security.model.User;
 import edu.escuelaing.security.repository.SecurityRepository;
@@ -20,4 +21,5 @@ public class UserServiceMongo implements UserService {
     public User create(UserDto userDto) {
         return securityRepository.save(new User(userDto));
     }
+
 }
