@@ -1,6 +1,8 @@
 package edu.escuelaing.security.controller;
 
+import edu.escuelaing.security.dto.StoleDto;
 import edu.escuelaing.security.dto.UserDto;
+import edu.escuelaing.security.model.Stole;
 import edu.escuelaing.security.model.User;
 import edu.escuelaing.security.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,10 +30,11 @@ public class UserController {
         return ResponseEntity.ok( userService.create( userDto ) );
     }
 
-    @PostMapping
-    public ResponseEntity<User> createStole(@RequestBody UserDto userDto )
+
+    @PostMapping("/stole")
+    public ResponseEntity<Stole> createStole(@RequestBody StoleDto stoleDto )
     {
-        return ResponseEntity.ok( userService.create( userDto ) );
+        return ResponseEntity.ok( userService.createStole( stoleDto ) );
     }
     
     
