@@ -2,15 +2,14 @@ package edu.escuelaing.security.controller;
 
 import edu.escuelaing.security.dto.StoleDto;
 import edu.escuelaing.security.dto.UserDto;
+import edu.escuelaing.security.dto.ZoneDto;
 import edu.escuelaing.security.model.Stole;
 import edu.escuelaing.security.model.User;
+import edu.escuelaing.security.model.Zone;
 import edu.escuelaing.security.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping( "/user" )
@@ -35,6 +34,13 @@ public class UserController {
     public ResponseEntity<Stole> createStole(@RequestBody StoleDto stoleDto )
     {
         return ResponseEntity.ok( userService.createStole( stoleDto ) );
+    }
+
+
+    @GetMapping("/zone")
+    public ResponseEntity<Zone> consultDangerZone(@RequestBody ZoneDto zoneDto){
+        return ResponseEntity.ok(userService.consulteDanger(zoneDto));
+
     }
     
     
