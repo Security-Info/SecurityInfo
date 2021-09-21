@@ -42,7 +42,13 @@ public class UserController {
         return ResponseEntity.ok(userService.consulteDanger(zoneDto));
 
     }
-    
+
+    @GetMapping("/verifyZone")
+    public ResponseEntity<Integer> contStoleInZone(@RequestBody ZoneDto zoneDto){
+        return ResponseEntity.ok(userService.verifyStoleZone(zoneDto));
+
+    }
+
     
 
 }

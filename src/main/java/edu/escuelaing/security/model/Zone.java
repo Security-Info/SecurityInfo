@@ -47,6 +47,34 @@ public class Zone {
         longAbajoDerecha = longitud + 0.00360488868;
 
 
+
+
+    }
+
+    public boolean verifyStoleZone(double checkLat, double checkLong){
+        boolean resultadoLatitud = false;
+        boolean resultadoLongitud = true;
+        if(checkLat < latArribaIzquierda && checkLat < latitudArribaDerecha
+                && checkLat > latAbajoIzquierda && checkLat > latAbajoDerecha){
+            resultadoLatitud = true;
+
+        }else{
+            resultadoLatitud = false;
+        }
+
+        if(checkLong > longArribaIzquierda && checkLong > longAbajoIzquierda
+                && checkLong < longitudArribaDerecha && checkLong < longAbajoDerecha){
+            resultadoLongitud = true;
+
+        }else{
+            resultadoLongitud = false;
+
+        }
+        if(resultadoLatitud == true && resultadoLongitud==true){
+            return true;
+        }else{
+            return false;
+        }
     }
 
     public double getLatitud() {

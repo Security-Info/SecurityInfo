@@ -43,5 +43,10 @@ public class UserServiceMongo implements UserService {
         return zoneRepository.save(new Zone(zoneDto));
     }
 
+    @Override
+    public int verifyStoleZone(ZoneDto zoneDto) {
+        return 0;
+    }
+
 
 }

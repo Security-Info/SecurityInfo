@@ -15,4 +15,6 @@ public interface UserService {
 
     Zone consulteDanger(ZoneDto zoneDto);
 
+    int verifyStoleZone(ZoneDto zoneDto);
+
 }

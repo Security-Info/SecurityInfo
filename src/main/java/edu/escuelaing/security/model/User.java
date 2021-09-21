@@ -16,6 +16,8 @@ public class User {
     private String clave;
     private boolean premium;
     private String numeroTelefono;
+    private double latitud;
+    private double longitud;
 
     public User(UserDto userDto) {
 
@@ -24,6 +26,8 @@ public class User {
         clave = userDto.getClave();
         premium = userDto.isPremium();
         numeroTelefono = userDto.getNumeroTelefono();
+        latitud = userDto.getLatitud();
+        longitud = userDto.getLongitud();
 
     }
 
@@ -51,6 +55,14 @@ public class User {
         return numeroTelefono;
     }
 
+    public double getLatitud() {
+        return latitud;
+    }
+
+    public double getLongitud() {
+        return longitud;
+    }
+
     public void setId(String id) {
         this.id = id;
     }
@@ -73,5 +85,13 @@ public class User {
 
     public void setNumeroTelefono(String numeroTelefono) {
         this.numeroTelefono = numeroTelefono;
+    }
+
+    public void setLatitud(double latitud) {
+        this.latitud = latitud;
+    }
+
+    public void setLongitud(double longitud) {
+        this.longitud = longitud;
     }
 }
