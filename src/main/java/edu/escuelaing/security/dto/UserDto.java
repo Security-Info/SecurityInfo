@@ -1,5 +1,4 @@
 package edu.escuelaing.security.dto;
-
 public class UserDto {
 
     private String nombre;
@@ -7,6 +6,8 @@ public class UserDto {
     private String correo;
     private boolean premium;
     private String numeroTelefono;
+    private double latitud;
+    private double longitud;
 
     public String getCorreo() {
         return correo;
@@ -24,8 +25,17 @@ public class UserDto {
         return clave;
     }
 
+
     public boolean isPremium() {
         return premium;
+    }
+
+    public double getLatitud() {
+        return latitud;
+    }
+
+    public double getLongitud() {
+        return longitud;
     }
 
     public void setNombre(String nombre) {
@@ -46,5 +56,13 @@ public class UserDto {
 
     public void setNumeroTelefono(String numeroTelefono) {
         this.numeroTelefono = numeroTelefono;
+    }
+
+    public void setLatitud(double latitud) {
+        this.latitud = latitud;
+    }
+
+    public void setLongitud(double longitud) {
+        this.longitud = longitud;
     }
 }

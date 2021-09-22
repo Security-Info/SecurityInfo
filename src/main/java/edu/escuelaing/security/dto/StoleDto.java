@@ -1,11 +1,10 @@
 package edu.escuelaing.security.dto;
-
 import java.util.Date;
 
 public class StoleDto {
     private Date fecha;
-    private String hora;
-    private String zona;
+    private double latitud;
+    private double longitud;
     private String descripcion;
 
 
@@ -13,12 +12,13 @@ public class StoleDto {
         return fecha;
     }
 
-    public String getHora() {
-        return hora;
+
+    public double getLatitud() {
+        return latitud;
     }
 
-    public String getZona() {
-        return zona;
+    public double getLongitud() {
+        return longitud;
     }
 
     public String getDescripcion() {
@@ -28,15 +28,17 @@ public class StoleDto {
         this.fecha = fecha;
     }
 
-    public void setHora(String hora) {
-        this.hora = hora;
-    }
 
-    public void setZona(String zona) {
-        this.zona = zona;
-    }
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
+    }
+
+    public void setLatitud(double latitud) {
+        this.latitud = latitud;
+    }
+
+    public void setLongitud(double longitud) {
+        this.longitud = longitud;
     }
 }

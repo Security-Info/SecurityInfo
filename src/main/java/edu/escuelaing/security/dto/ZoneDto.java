@@ -1,30 +1,23 @@
 package edu.escuelaing.security.dto;
-
 import java.util.Date;
 
 public class ZoneDto{
-    private String nivel;
-    private String rango;
-    private Double cantReportes;
+    private double latitud;
+    private double longitud;
 
-    public String getNivel() {
-        return nivel;
-    }
-    public String getRango() {
-        return rango;
-    }
-    public Double getReportes() {
-        return cantReportes;
+    public double getLatitud() {
+        return latitud;
     }
 
-    public void setDescripcion(String nivel) {
-        this.nivel = nivel;
-    }
-    public void seRango(String rango) {
-        this.rango = rango;
+    public double getLongitud() {
+        return longitud;
     }
 
-    public void setHora(Double cantReportes) {
-        this.cantReportes = cantReportes;
+    public void setLatitud(double latitud) {
+        this.latitud = latitud;
+    }
+
+    public void setLongitud(double longitud) {
+        this.longitud = longitud;
     }
 }
