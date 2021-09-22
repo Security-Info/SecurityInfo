@@ -6,7 +6,7 @@ plugins {
 
 group = 'edu.escuelaing'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '1.8'
+sourceCompatibility = "11"
 
 repositories {
 	mavenCentral()
@@ -16,8 +16,10 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation 'com.fasterxml.jackson.core:jackson-databind:2.11.0'
 }
 
 test {
 	useJUnitPlatform()
 }
+targetCompatibility = JavaVersion.VERSION_11
