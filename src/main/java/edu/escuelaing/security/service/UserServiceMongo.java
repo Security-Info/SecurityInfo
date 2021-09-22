@@ -47,7 +47,30 @@ public class UserServiceMongo implements UserService {
 
     @Override
     public int verifyStoleZone(ZoneDto zoneDto) {
-        return 0;
+        int contador = 0;
+        double lat = zoneDto.getLatitud();
+        double lang = zoneDto.getLongitud();
+        Zone zona = new Zone(zoneDto);
+
+        List<Stole> robos = stoleRepository.findAll();
+
+        for(int i=0; i<robos.size(); i++){
+            Stole indexRobo = robos.get(i);
+            double latRobo = indexRobo.getLatitud();
+            double logRobo = indexRobo.getLongitud();
+            if(zona.verifyStoleZone(latRobo,logRobo)){
+                contador++;
+            }
+
+
+        }
+        return contador;
+
+
+
+
+
+
     }
 
     @Override

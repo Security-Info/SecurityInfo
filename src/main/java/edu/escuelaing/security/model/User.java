@@ -19,6 +19,9 @@ public class User {
     private double latitud;
     private double longitud;
 
+    public User() {
+    }
+
     public User(UserDto userDto) {
 
         nombre = userDto.getNombre();
