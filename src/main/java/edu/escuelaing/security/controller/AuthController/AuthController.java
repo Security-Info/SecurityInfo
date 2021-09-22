@@ -36,11 +36,11 @@ public class AuthController
         this.userService = userService;
     }
 
-   @PostMapping
+  @PostMapping("/user")
    public TokenDto login(@RequestBody LoginDto loginDto )
   {
-    User user = userService.findByEmail( loginDto.email );
-  if ( BCrypt.checkpw( loginDto.password, user.getClave() ) )
+    User user = userService.findByCorreo( loginDto.correo );
+    if ( BCrypt.checkpw( loginDto.clave, user.getClave() ) )
         {
          return generateTokenDto( user );
         }

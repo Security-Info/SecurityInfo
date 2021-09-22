@@ -12,7 +12,7 @@ public interface UserService {
 
     User create(UserDto user );
 
-    User findByEmail( String email )
+    User findByCorreo( String correo )
             throws UserNotFoundException;
 
     Stole createStole(StoleDto stoleDto);

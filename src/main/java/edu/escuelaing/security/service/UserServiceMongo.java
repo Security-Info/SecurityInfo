@@ -20,10 +20,10 @@ public class UserServiceMongo implements UserService {
 
     private final SecurityRepository securityRepository;
 
-    @Autowired
+
     private StoleRepository stoleRepository;
 
-    @Autowired
+
     private ZoneRepository zoneRepository;
 
     public UserServiceMongo( @Autowired SecurityRepository securityRepository )
@@ -37,10 +37,10 @@ public class UserServiceMongo implements UserService {
     }
 
     @Override
-    public User findByEmail( String email )
+    public User findByCorreo( String correo )
             throws UserNotFoundException
     {
-        Optional<User> optionalUser = securityRepository.findByEmail( email );
+        Optional<User> optionalUser = securityRepository.findByCorreo(correo);
         if ( optionalUser.isPresent() )
         {
             return optionalUser.get();

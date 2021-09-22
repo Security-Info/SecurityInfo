@@ -10,6 +10,9 @@ public class UserDto {
     private double latitud;
     private double longitud;
 
+    public UserDto()
+    {
+    }
     public String getCorreo() {
         return correo;
     }

@@ -7,6 +7,6 @@ import java.util.Optional;
 
 public interface SecurityRepository extends MongoRepository<User, String> {
 
-    Optional<User> findByEmail( String email );
+    Optional<User> findByCorreo( String correo);
 
 }

@@ -29,6 +29,7 @@ import org.springframework.security.web.authentication.www.BasicAuthenticationFi
                         BasicAuthenticationFilter.class ).cors().and().csrf().disable().authorizeRequests()
                         .antMatchers(HttpMethod.GET, "/securityInfo/health" )
                         .permitAll().antMatchers( HttpMethod.POST, "/user" )
+                        .permitAll().antMatchers( HttpMethod.POST, "/securityInfo/auth/user" )
                         .permitAll().anyRequest().authenticated().and().sessionManagement().sessionCreationPolicy(
                         SessionCreationPolicy.STATELESS );
 

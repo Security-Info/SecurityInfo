@@ -2,7 +2,9 @@ package edu.escuelaing.security.model;
 
 import edu.escuelaing.security.dto.UserDto;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.security.crypto.bcrypt.BCrypt;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -12,28 +14,33 @@ import java.util.List;
 public class User {
 
     @Id
-    private String id;
-    private String nombre;
-    private String correo;
-    private String clave;
-    private boolean premium;
-    private String numeroTelefono;
-    private double latitud;
-    private double longitud;
+    String id;
+
+    String nombre;
+
+    @Indexed( unique = true )
+    String correo;
+
+    String clave;
+    boolean premium;
+    String numeroTelefono;
+    double latitud;
+    double longitud;
     List<RoleEnum> roles;
 
     public User(UserDto userDto) {
 
         nombre = userDto.getNombre();
         correo = userDto.getCorreo();
-        clave = userDto.getClave();
+        clave = BCrypt.hashpw( userDto.getClave(), BCrypt.gensalt() );
         premium = userDto.isPremium();
         numeroTelefono = userDto.getNumeroTelefono();
         latitud = userDto.getLatitud();
         longitud = userDto.getLongitud();
         roles = new ArrayList<>(Collections.singleton(RoleEnum.USER));
-
-
+    }
+    public User()
+    {
     }
 
     public String getId() {
