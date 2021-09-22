@@ -11,7 +11,6 @@ import edu.escuelaing.security.repository.StoleRepository;
 import edu.escuelaing.security.repository.ZoneRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 @Service
@@ -36,7 +35,8 @@ public class UserServiceMongo implements UserService {
     }
 
     @Override
-    public Stole createStole(StoleDto stoleDto) {
+    public Stole createStole(StoleDto stoleDto){
+        verifyUserZoneStole(stoleDto);
         return stoleRepository.save(new Stole(stoleDto));
     }
 
@@ -67,6 +67,21 @@ public class UserServiceMongo implements UserService {
         return contador;
 
     }
+    public void verifyUserZoneStole(StoleDto stoleDto){
+        double latRobo = stoleDto.getLatitud();
+        double longRobo = stoleDto.getLongitud();
+        List<User> usuarios = securityRepository.findAll();
+        for(int i=0; i<usuarios.size(); i++){
+            User usuario = usuarios.get(i);
+            double usuarioLat = usuario.getLatitud();
+            double usuarioLong = usuario.getLongitud();
+            Zone zona = new Zone(usuarioLat,usuarioLong);
+            if(zona.verifyStoleZone(latRobo,longRobo)){
+
+            }
+        }
+    }
+
 
     @Override
     public List<User> userAll() {

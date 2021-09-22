@@ -7,13 +7,14 @@ import edu.escuelaing.security.model.Stole;
 import edu.escuelaing.security.model.User;
 import edu.escuelaing.security.model.Zone;
 
+import javax.mail.MessagingException;
 import java.util.List;
 
 public interface UserService {
 
     User create(UserDto user );
 
-    Stole createStole(StoleDto stoleDto);
+    Stole createStole(StoleDto stoleDto) throws MessagingException;
 
     Zone consulteDanger(ZoneDto zoneDto);
 

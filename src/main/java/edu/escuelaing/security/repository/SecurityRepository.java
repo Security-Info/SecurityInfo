@@ -8,6 +8,8 @@ import java.util.List;
 
 public interface SecurityRepository extends MongoRepository<User, String> {
 
+}
+
 
 
 
