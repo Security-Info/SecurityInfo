@@ -1,7 +1,7 @@
 package edu.escuelaing.security.exception;
 
-import org.ada.school.error.ErrorCodeEnum;
-import org.ada.school.error.InternalServerErrorException;
+import edu.escuelaing.security.exception.error.InternalServerErrorException;
+import edu.escuelaing.security.exception.error.ErrorCodeEnum;
 import org.springframework.http.HttpStatus;
 
 public class UserNotFoundException

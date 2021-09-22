@@ -6,9 +6,8 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 
 import  edu.escuelaing.security.service.UserService;
-import org.ada.school.exception.InvalidCredentialsException;
-import org.ada.school.repository.document.User;
-import org.ada.school.service.UserService;
+import edu.escuelaing.security.exception.InvalidCredentialsException;
+import edu.escuelaing.security.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.crypto.bcrypt.BCrypt;
@@ -20,8 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Calendar;
 import java.util.Date;
 
-import static org.ada.school.utils.Constants.CLAIMS_ROLES_KEY;
-import static org.ada.school.utils.Constants.TOKEN_DURATION_MINUTES;
+import  static edu.escuelaing.security.utils.Constants.*;
 
 @RestController
 @RequestMapping( "securityInfo/auth" )
@@ -38,13 +36,13 @@ public class AuthController
         this.userService = userService;
     }
 
-    @PostMapping
-    public TokenDto login(@RequestBody LoginDto loginDto )
-    {
-        User user = userService.findByEmail( loginDto.email );
-        if ( BCrypt.checkpw( loginDto.password, user.getPasswordHash() ) )
+   @PostMapping
+   public TokenDto login(@RequestBody LoginDto loginDto )
+  {
+    User user = userService.findByEmail( loginDto.email );
+  if ( BCrypt.checkpw( loginDto.password, user.getClave() ) )
         {
-            return generateTokenDto( user );
+         return generateTokenDto( user );
         }
         else
         {
