@@ -12,6 +12,8 @@ import edu.escuelaing.security.repository.ZoneRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class UserServiceMongo implements UserService {
 
@@ -48,5 +50,19 @@ public class UserServiceMongo implements UserService {
         return 0;
     }
 
+    @Override
+    public List<User> userAll() {
+        return securityRepository.findAll();
+    }
+
+    @Override
+    public boolean deleteById(String id) {
+
+        if(stoleRepository.existsById(id)){
+            stoleRepository.deleteById(id);
+            return true;
+        }
+        return false;
+    }
 
 }

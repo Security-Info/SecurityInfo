@@ -7,6 +7,8 @@ import edu.escuelaing.security.model.Stole;
 import edu.escuelaing.security.model.User;
 import edu.escuelaing.security.model.Zone;
 
+import java.util.List;
+
 public interface UserService {
 
     User create(UserDto user );
@@ -16,5 +18,9 @@ public interface UserService {
     Zone consulteDanger(ZoneDto zoneDto);
 
     int verifyStoleZone(ZoneDto zoneDto);
+
+    List<User> userAll();
+
+    boolean deleteById(String id);
 
 }

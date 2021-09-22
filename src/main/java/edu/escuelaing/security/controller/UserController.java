@@ -11,6 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping( "/user" )
 public class UserController {
@@ -21,6 +23,12 @@ public class UserController {
     public UserController( @Autowired UserService userService )
     {
         this.userService = userService;
+    }
+
+    @GetMapping
+    public ResponseEntity<List<User>> all()
+    {
+        return ResponseEntity.ok( userService.userAll() );
     }
 
     @PostMapping
@@ -48,6 +56,17 @@ public class UserController {
         return ResponseEntity.ok(userService.verifyStoleZone(zoneDto));
 
     }
+
+    @DeleteMapping( "/{id}" )
+    public ResponseEntity<Boolean> delete( @PathVariable String id )
+    {
+        return ResponseEntity.ok( userService.deleteById( id ) );
+    }
+
+
+
+
+
 
     
 
