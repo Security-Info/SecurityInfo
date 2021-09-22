@@ -12,7 +12,14 @@ import edu.escuelaing.security.repository.ZoneRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
-
+import java.util.Properties;
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.AddressException;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 @Service
 public class UserServiceMongo implements UserService {
 
@@ -35,7 +42,7 @@ public class UserServiceMongo implements UserService {
     }
 
     @Override
-    public Stole createStole(StoleDto stoleDto){
+    public Stole createStole(StoleDto stoleDto) throws MessagingException {
         verifyUserZoneStole(stoleDto);
         return stoleRepository.save(new Stole(stoleDto));
     }
@@ -67,7 +74,7 @@ public class UserServiceMongo implements UserService {
         return contador;
 
     }
-    public void verifyUserZoneStole(StoleDto stoleDto){
+    public void verifyUserZoneStole(StoleDto stoleDto) throws MessagingException {
         double latRobo = stoleDto.getLatitud();
         double longRobo = stoleDto.getLongitud();
         List<User> usuarios = securityRepository.findAll();
@@ -77,7 +84,7 @@ public class UserServiceMongo implements UserService {
             double usuarioLong = usuario.getLongitud();
             Zone zona = new Zone(usuarioLat,usuarioLong);
             if(zona.verifyStoleZone(latRobo,longRobo)){
-
+                sendAlert(usuario.getCorreo(),stoleDto.getDescripcion(),latRobo,longRobo);
             }
         }
     }
@@ -96,6 +103,36 @@ public class UserServiceMongo implements UserService {
             return true;
         }
         return false;
+    }
+
+    public void sendAlert(String email,String descripcion, double lat, double longi) throws MessagingException {
+        String remitente = "securtiyinfo98@gmail.com";
+        String clave = "SecurtiyInfo98ieti.";
+        String destino = email;
+        Properties props = new Properties();
+        props.put("mail.smtp.host", "smtp.gmail.com");
+        props.put("mail.smtp.port", "587");
+        props.put("mail.smtp.auth", "true");
+        props.put("mail.smtp.starttls.enable", "true");
+        props.put("mail.smtp.user", remitente);
+        props.put("mail.smtp.clave", clave);
+        props.put("mail.smtp.ssl.trust", "smtp.gmail.com");
+        Session session = Session.getDefaultInstance(props);
+        MimeMessage message = new MimeMessage(session);
+
+        try {
+            message.addRecipient(Message.RecipientType.TO, new InternetAddress(destino));
+            message.setSubject("Alerta de seguridad en tu zona");
+            message.setText("Ha ocurrido un reporte reciente de seguridad en tu zona, la descipcion es: "+descripcion+". el lugar exacto es: "+String.valueOf(lat)+String.valueOf(longi));
+            Transport transport = session.getTransport("smtp");
+            transport.connect("smtp.gmail.com", remitente, clave);
+            transport.sendMessage(message, message.getAllRecipients());
+            transport.close();
+        }
+        catch (MessagingException me) {
+            me.printStackTrace();
+        }
+
     }
 
 }
