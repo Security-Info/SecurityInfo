@@ -8,6 +8,12 @@ public class StoleDto {
     private double longitud;
     private String descripcion;
 
+    public StoleDto(Date fecha, double latitud, double longitud, String descripcion) {
+        this.fecha = fecha;
+        this.latitud = latitud;
+        this.longitud = longitud;
+        this.descripcion = descripcion;
+    }
 
     public Date getFecha() {
         return fecha;

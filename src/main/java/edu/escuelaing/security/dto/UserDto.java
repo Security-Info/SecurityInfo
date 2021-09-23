@@ -10,6 +10,16 @@ public class UserDto {
     private double latitud;
     private double longitud;
 
+    public UserDto(String nombre, String clave, String correo, boolean premium, String numeroTelefono, double latitud, double longitud) {
+        this.nombre = nombre;
+        this.clave = clave;
+        this.correo = correo;
+        this.premium = premium;
+        this.numeroTelefono = numeroTelefono;
+        this.latitud = latitud;
+        this.longitud = longitud;
+    }
+
     public UserDto()
     {
     }

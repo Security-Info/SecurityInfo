@@ -6,6 +6,14 @@ public class ZoneDto{
     private double latitud;
     private double longitud;
 
+    public ZoneDto(double latitud, double longitud) {
+        this.latitud = latitud;
+        this.longitud = longitud;
+    }
+
+    public ZoneDto() {
+    }
+
     public double getLatitud() {
         return latitud;
     }
