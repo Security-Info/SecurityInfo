@@ -123,7 +123,7 @@ public class UserServiceMongo implements UserService {
         try {
             message.addRecipient(Message.RecipientType.TO, new InternetAddress(destino));
             message.setSubject("Alerta de seguridad en tu zona");
-            message.setText("Ha ocurrido un reporte reciente de seguridad en tu zona, la descipcion es: "+descripcion+". el lugar exacto es: "+String.valueOf(lat)+String.valueOf(longi));
+            message.setText("Ha ocurrido un reporte reciente de seguridad en tu zona, la descripcion es: "+descripcion+". el lugar exacto es: "+"https://maps.google.com/?q="+lat+","+longi);
             Transport transport = session.getTransport("smtp");
             transport.connect("smtp.gmail.com", remitente, clave);
             transport.sendMessage(message, message.getAllRecipients());
