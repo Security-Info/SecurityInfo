@@ -13,6 +13,7 @@ import edu.escuelaing.security.repository.ZoneRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -64,6 +65,24 @@ public class UserServiceMongo implements UserService {
     @Override
     public int verifyStoleZone(ZoneDto zoneDto) {
         return 0;
+    }
+
+    @Override
+    public List<User> all() {
+        return securityRepository.findAll();
+    }
+
+    @Override
+    public User findById(String id) {
+        Optional<User> optionalUser = securityRepository.findById( id );
+        if ( optionalUser.isPresent() )
+        {
+            return optionalUser.get();
+        }
+        else
+        {
+            throw new UserNotFoundException();
+        }
     }
 
 

@@ -30,6 +30,7 @@ import org.springframework.security.web.authentication.www.BasicAuthenticationFi
                         .antMatchers(HttpMethod.GET, "/securityInfo/health" )
                         .permitAll().antMatchers( HttpMethod.POST, "/user" )
                         .permitAll().antMatchers( HttpMethod.POST, "/securityInfo/auth/user" )
+                        .permitAll().antMatchers( HttpMethod.GET, "/user" )
                         .permitAll().anyRequest().authenticated().and().sessionManagement().sessionCreationPolicy(
                         SessionCreationPolicy.STATELESS );
 

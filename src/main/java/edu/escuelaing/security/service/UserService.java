@@ -8,6 +8,8 @@ import edu.escuelaing.security.model.Stole;
 import edu.escuelaing.security.model.User;
 import edu.escuelaing.security.model.Zone;
 
+import java.util.List;
+
 public interface UserService {
 
     User create(UserDto user );
@@ -21,4 +23,7 @@ public interface UserService {
 
     int verifyStoleZone(ZoneDto zoneDto);
 
+    List<User> all();
+
+    User findById(String id);
 }

@@ -11,6 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping( "/user" )
 public class UserController {
@@ -21,6 +23,19 @@ public class UserController {
     public UserController( @Autowired UserService userService )
     {
         this.userService = userService;
+    }
+
+
+    @GetMapping
+    public List<User> all()
+    {
+        return userService.all();
+    }
+
+    @GetMapping( "/{id}" )
+    public User findById( @PathVariable String id )
+    {
+        return userService.findById( id );
     }
 
     @PostMapping
@@ -48,7 +63,5 @@ public class UserController {
         return ResponseEntity.ok(userService.verifyStoleZone(zoneDto));
 
     }
-
-    
 
 }
