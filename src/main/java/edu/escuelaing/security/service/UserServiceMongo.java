@@ -21,10 +21,10 @@ public class UserServiceMongo implements UserService {
 
     private final SecurityRepository securityRepository;
 
-
+    @Autowired
     private StoleRepository stoleRepository;
 
-
+    @Autowired
     private ZoneRepository zoneRepository;
 
     public UserServiceMongo( @Autowired SecurityRepository securityRepository )
@@ -36,6 +36,60 @@ public class UserServiceMongo implements UserService {
     public User create(UserDto userDto) {
         return securityRepository.save(new User(userDto));
     }
+
+    @Override
+    public Stole createStole(StoleDto stoleDto) {
+        return stoleRepository.save(new Stole(stoleDto));
+    }
+
+    @Override
+    public Zone consulteDanger(ZoneDto zoneDto) {
+        return zoneRepository.save(new Zone(zoneDto));
+    }
+
+    @Override
+    public int verifyStoleZone(ZoneDto zoneDto) {
+        int contador = 0;
+        double lat = zoneDto.getLatitud();
+        double lang = zoneDto.getLongitud();
+        Zone zona = new Zone(zoneDto);
+
+        List<Stole> robos = stoleRepository.findAll();
+
+        for(int i=0; i<robos.size(); i++){
+            Stole indexRobo = robos.get(i);
+            double latRobo = indexRobo.getLatitud();
+            double logRobo = indexRobo.getLongitud();
+            if(zona.verifyStoleZone(latRobo,logRobo)){
+                contador++;
+            }
+
+
+        }
+        return contador;
+
+
+
+
+
+
+    }
+
+    @Override
+    public List<User> userAll() {
+        return securityRepository.findAll();
+    }
+
+    @Override
+    public boolean deleteById(String id) {
+
+        if(stoleRepository.existsById(id)){
+            stoleRepository.deleteById(id);
+            return true;
+        }
+        return false;
+    }
+
 
     @Override
     public User findByCorreo( String correo )
@@ -51,39 +105,5 @@ public class UserServiceMongo implements UserService {
             throw new UserNotFoundException();
         }
     }
-
-    @Override
-    public Stole createStole(StoleDto stoleDto) {
-        return stoleRepository.save(new Stole(stoleDto));
-    }
-
-    @Override
-    public Zone consulteDanger(ZoneDto zoneDto) {
-        return zoneRepository.save(new Zone(zoneDto));
-    }
-
-    @Override
-    public int verifyStoleZone(ZoneDto zoneDto) {
-        return 0;
-    }
-
-    @Override
-    public List<User> all() {
-        return securityRepository.findAll();
-    }
-
-    @Override
-    public User findById(String id) {
-        Optional<User> optionalUser = securityRepository.findById( id );
-        if ( optionalUser.isPresent() )
-        {
-            return optionalUser.get();
-        }
-        else
-        {
-            throw new UserNotFoundException();
-        }
-    }
-
 
 }

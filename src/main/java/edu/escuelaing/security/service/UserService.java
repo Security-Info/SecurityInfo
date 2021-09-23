@@ -1,5 +1,6 @@
 package edu.escuelaing.security.service;
 
+
 import edu.escuelaing.security.dto.StoleDto;
 import edu.escuelaing.security.dto.UserDto;
 import edu.escuelaing.security.dto.ZoneDto;
@@ -14,17 +15,18 @@ public interface UserService {
 
     User create(UserDto user );
 
-    User findByCorreo( String correo )
-            throws UserNotFoundException;
-
     Stole createStole(StoleDto stoleDto);
 
     Zone consulteDanger(ZoneDto zoneDto);
 
     int verifyStoleZone(ZoneDto zoneDto);
 
-    List<User> all();
+    List<User> userAll();
 
-    User findById(String id);
+    boolean deleteById(String id);
+
+    User findByCorreo( String correo )
+            throws UserNotFoundException;
+
 
 }

@@ -16,6 +16,9 @@ public class Stole{
     private double longitud;
     private String descripcion;
 
+    public Stole() {
+    }
+
     public Stole(StoleDto stoleDto) {
         fecha = stoleDto.getFecha();
         latitud = stoleDto.getLatitud();

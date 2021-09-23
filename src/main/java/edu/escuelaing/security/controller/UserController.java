@@ -25,17 +25,10 @@ public class UserController {
         this.userService = userService;
     }
 
-
     @GetMapping
-    public List<User> all()
+    public ResponseEntity<List<User>> all()
     {
-        return userService.all();
-    }
-
-    @GetMapping( "/{id}" )
-    public User findById( @PathVariable String id )
-    {
-        return userService.findById( id );
+        return ResponseEntity.ok( userService.userAll() );
     }
 
     @PostMapping

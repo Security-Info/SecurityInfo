@@ -22,6 +22,14 @@ public class Zone {
     private double latAbajoDerecha;
     private double longAbajoDerecha;
 
+    public Zone() {
+    }
+
+    public Zone(double latitud, double longitud) {
+        this.latitud = latitud;
+        this.longitud = longitud;
+        calculate(latitud,longitud);
+    }
 
     public Zone(ZoneDto zoneDto) {
 
