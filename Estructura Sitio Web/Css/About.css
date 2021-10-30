@@ -1,0 +1,104 @@
+body {
+    font-family:Helvetica; font-size: 15px; background-color: rgba(13, 16, 23, 1); margin:0;
+}
+#blockLogo {
+    margin: 10px 0px 10px; display: flex; text-align: center;
+}
+    .buttonImg {
+        background-color: rgba(0, 0, 0, 0); border: none; cursor: pointer;
+    }
+        #logo {
+            margin: auto; float: left; height: 60px; width: 250px;
+        }
+            .appLogo {
+                margin: auto; float: left;
+            }
+    .blockOut {
+        height: 40px; background-color: rgba(02, 07, 13, 1);
+    }    
+        .out:hover {
+            background-color: rgba(02, 07, 13, 1); border-bottom: 3px solid rgba(0, 70, 185, 1);
+        }
+.blockOption {
+    padding: 0px 0px 0px; display: flex; background-color: rgba(0, 70, 185, 1); height: 40px; border-bottom: 0px solid rgba(255, 255, 255, 1);
+}
+    .optHome {
+        margin: auto; float: left; height: 40px; width: 100px; color: rgba(255, 255, 255, 1); background-color: rgba(0, 0, 0, 0); border: none; cursor: pointer;
+    }
+        .optHome:hover {
+            background-color: rgba(0, 50, 165, 1); border-bottom: 3px solid rgba(255, 255, 255, 1);
+        }
+.blockMain {
+    display: grid; grid-template-columns: 0.33fr 0.33fr 0.34fr; height: 77vh; max-width: 100%;
+}
+    .blockMis {
+        position: relative; display: flex; flex-direction: column; min-height: 90%; background-color: rgba(33, 36, 43, 1); border-top: 4px solid rgba(13, 16, 23, 1); border-bottom: 4px solid rgba(13, 16, 23, 1); border-left: 2px solid rgba(13, 16, 23, 1); border-right: 2px solid rgba(13, 16, 23, 1); transition: .5s ease;
+    }
+        .blockFirtImg {
+            display: block; width: 100%; height: auto; text-align: center;
+        }
+            .blockSub {
+                margin: 20px auto 20px; text-align: center;
+            }
+                .subtitle {
+                    font-weight: bold; color:rgba(255, 255, 255, 1);
+                }
+            /*.blockLogAbt {
+            }*/
+                .logoAbout {
+                    height: 120px; width: 120px;
+                }
+        .blockTxtAbt {
+            position: absolute; bottom: 0; left: 0; right: 0; background-color: rgba(22, 27, 33, 1); overflow: hidden; width: 100%; height: 0; transition: .5s ease;
+        }
+            .label {
+                font-weight: bold; color: rgba(255, 255, 255, 1); position: absolute; overflow: hidden; top: 50%; left: 50%; transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%);
+            }
+                .blockMis:hover {
+                    background-color: rgb(10, 85, 187, 1);
+                }
+                .blockMis:hover .blockTxtAbt {
+                    height: 30%;
+                }
+    .blockVis {
+        position: relative; display: flex; flex-direction: column; min-height: 90%; background-color: rgba(43, 46, 53, 1); border-top: 4px solid rgba(13, 16, 23, 1); border-bottom: 4px solid rgba(13, 16, 23, 1); border-left: 2px solid rgba(13, 16, 23, 1); border-right: 2px solid rgba(13, 16, 23, 1); transition: .5s ease;
+    }
+        .blockVis:hover {
+            background-color: rgb(10, 85, 187, 1);
+        }
+        .blockMem, .blockMis {
+            display: flex; justify-content: center; align-items: center;
+        }
+        .blockVis {
+            display: flex; justify-content: center; align-items: center;
+        }
+        .blockVis:hover {
+            background-color: rgb(10, 85, 187, 1);
+        }
+        .blockVis:hover .blockTxtAbt {
+            height: 30%;
+        }
+    .blockMem {
+        position: relative; display: flex; flex-direction: column; min-height: 90%; background-color: rgba(53, 56, 63, 1); border-top: 4px solid rgba(13, 16, 23, 1); border-bottom: 4px solid rgba(13, 16, 23, 1); border-left: 2px solid rgba(13, 16, 23, 1); border-right: 4px solid rgba(13, 16, 23, 1); transition: .5s ease;
+    }
+        .labelList {
+            font-weight: bold; color: rgba(255, 255, 255, 1); text-align: justify;
+        }
+            .blockMem:hover {
+                background-color: rgb(20, 105, 197, 1);
+            }
+            .blockMem:hover {
+                background-color: rgb(10, 85, 187, 1);
+            }
+            .blockMem:hover .blockTxtAbt {
+                height: 30%;
+            }
+#blockInfo {
+    padding: 23px 0px 24px; margin: auto auto auto; background-color: rgba(22, 27, 33, 1); border-top: 1px solid rgba(48, 53, 59, 1); text-align: center;
+}
+    .optFooter {
+        padding: 0px 40px 0px; margin: auto auto auto; color: rgba(255, 255, 255, 1); text-decoration: none;
+    }
+        .optFooter:hover {
+            background-color: rgba(255, 255, 255, 0); color: rgba(70, 140, 255, 1);
+        }

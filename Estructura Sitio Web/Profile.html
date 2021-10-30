@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta class="viewport" content="width=device-width, initial-scale=1"/>
+        <title>SecurityInfo | Perfil</title>
+        <script type="text/javascript" src="./Js/GiveMePage.js"></script>
+    </head>
+    <body>
+        <link rel="stylesheet" type="text/css" href="./Css/Profile.css">
+        <div id="blockLogo">
+            <button class="buttonImg appLogo" type="button" onclick="">
+                <img id="logo" src="./Image/SecurityInfo2.png" alt="Soldado con espada, securityInfo."/>
+            </button>
+            <div class="blockOut">
+                <button type="button" class="optHome out" onclick="changePage('login')">Cerrar Sesión</button>
+            </div>
+        </div>
+        <div class="blockOption">
+            <button type="button" class="optHome" onclick="changePage('home')">Inicio</button>
+            <button type="button" class="optHome" onclick="changePage('report')">Reportar</button>
+            <button type="button" class="optHome" onclick="changePage('aboutUser')">Nosotros</button>
+            <button type="button" class="optHome" onclick="changePage('contactUser')">Contacto</button>
+        </div>
+        <div class="blockMain">
+            <div class="blockMenu">
+                <div class="blockUser">
+                    <div id="blockPhoto">
+                        <button class="buttonImg" type="button" onclick="">
+                            <img id="userPhoto" src="./Image/Foto.jpg" alt="Fotografia del usaurio."/>
+                        </button>
+                    </div>
+                    <div id="blockName">
+                        <label id="userName">User Name</label>
+                    </div>
+                </div>
+                <div class="blockTitle">
+                    <label class="title">Información del Usuario</label>
+                </div>
+                <div class="blockProfile">
+                    <form action="/action_page.php">
+                        <div>
+                            <div class="blockContact">
+                                <div class="blockInfo email">
+                                    <div class="blockSub">
+                                        <label for="fname" class="subtitle">Email</label>
+                                    </div>
+                                    <div class="blockInput">
+                                        <input type="email" class="inputs" id="userInput" pattern=".+@globex\.com" size="30" required value="correo@gmail.com"/>
+                                    </div>
+                                </div>
+                                <div class="blockInfo tel">
+                                    <div class="blockSub">
+                                        <label for="lname" class="subtitle">Teléfono</label>
+                                    </div>
+                                    <div class="blockInput">
+                                        <input type="text" class="inputs" id="userInput" name="fname" placeholder="" value="Number User">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="blockPasswds">
+                                <div class="blockInfo firstPass">
+                                    <div class="blockSub">
+                                        <label for="fname" class="subtitle">Contraseña</label>
+                                    </div>
+                                    <div class="blockInput">
+                                        <input type="password" class="inputs" id="userInput" name="fname" placeholder="" value="Password"/>
+                                    </div>
+                                </div>
+                                <div class="blockInfo lastPass">
+                                    <div class="blockSub">
+                                        <label for="lname" class="subtitle">Repetir Contraseña</label>
+                                    </div>
+                                    <div class="blockInput">
+                                        <input type="password" class="inputs" id="userInput" name="fname" placeholder="" value="Password"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form> 
+                </div>
+                <div class="blockSave">
+                    <button type="button" class="optHome save" onclick="">Guardar Cambios</button>
+                </div>
+            </div>
+            <div id="blockMap">
+            </div>
+        </div>
+        <footer id="blockInfo">
+            <a href="AboutUser.html" class="optFooter">Nosotros</a>
+            <a href="ContactUser.html" class="optFooter">Contacto</a>
+        </footer>
+    </body>
+</html>

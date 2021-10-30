@@ -1,0 +1,95 @@
+body {
+    font-family:Helvetica; font-size: 15px; background-color: rgba(13, 16, 23, 1); margin:0;
+}
+#blockLogo {
+    margin: 10px 0px 10px; display: flex; text-align: center;
+}
+    .buttonImg {
+        background-color: rgba(0, 0, 0, 0); border: none; cursor: pointer;
+    }
+        #logo {
+            margin: auto; float: left; height: 60px; width: 250px;
+        }
+            .appLogo {
+                margin: auto; float: left;
+            }
+    .blockOut {
+        height: 40px; background-color: rgba(02, 07, 13, 1);
+    }    
+        .out:hover {
+            background-color: rgba(02, 07, 13, 1); border-bottom: 3px solid rgba(0, 70, 185, 1);
+        }
+.blockOption {
+    padding: 0px 0px 0px; display: flex; background-color: rgba(0, 70, 185, 1); height: 40px; border-bottom: 0px solid rgba(255, 255, 255, 1);
+}
+    .optHome {
+        margin: auto; float: left; height: 40px; width: 100px; color: rgba(255, 255, 255, 1); background-color: rgba(0, 0, 0, 0); border: none; cursor: pointer;
+    }
+        .optHome:hover {
+            background-color: rgba(0, 50, 165, 1); border-bottom: 3px solid rgba(255, 255, 255, 1);
+        }
+/*.blockMain { 
+}*/
+    .blockMenu {
+        display: flex; flex-direction: column; min-height: 100%; background-color: rgba(22, 27, 33, 1); 
+    }
+        .blockUser {
+            margin: 40px auto 10px; background-color: rgba(0, 0, 0, 0);
+        }
+            #blockPhoto {
+                text-align: center;
+            }
+                #userPhoto {
+                    border-radius: 75%; height: 150px; width: 150px;
+                }   
+            #blockName {
+                margin: 20px auto 20px; height: 25px; text-align: center; border-bottom: 1px solid rgba(48, 53, 59, 1);
+            }
+                #userName {
+                    font-weight: bold; color: rgba(255, 255, 255, 1); 
+                }
+        .blockTitle {
+            margin: 0px 0px 20px; height: 25px; width: 510px; text-align: center; border-bottom: 1px solid rgba(0, 70, 185, 1);
+        }
+            .title {
+                font-weight: bold; color:rgba(255, 255, 255, 1);
+            }
+        .blockProfile {
+            padding: 10px auto 10px; margin: 0px auto 0px; background-color:rgba(22, 27, 33, 1); height: 180px; width: 510px; border-radius: 7px; border: 1px solid rgba(48, 53, 59, 1);
+        }
+            .blockContact {
+                margin: 20px auto 20px; display: flex;
+            }
+                .blockInfo {
+                    float: left; margin-left: 20px;
+                }
+                    .blockSub  {
+                        margin: 0px 0px 10px;
+                    }
+                        .subtitle {
+                            color:rgba(255, 255, 255, 1);
+                        }
+                        .inputs {
+                            height:28px; width:220px; text-align: center; border-radius: 7px; border: 1px solid rgba(48, 53, 59, 1); background-color: rgba(13, 16, 23, 1); color: rgba(255, 255, 255, 1);
+                        }
+    .blockSave {
+        margin: 20px auto 30px; height: 40px;
+    }
+        .save {
+            width: 160px;
+        }
+            .save:hover {
+                background-color: rgba(02, 07, 13, 1); border-bottom: 3px solid rgba(0, 70, 185, 1);
+            }
+    .blockMenu{
+        display: flex; justify-content: center; align-items: center;
+    }
+#blockInfo {
+    padding: 23px 0px 24px; margin: auto auto auto; background-color:rgba(22, 27, 33, 1); border-top: 1px solid rgba(48, 53, 59, 1); text-align: center;
+}
+    .optFooter {
+        padding: 0px 40px 0px; margin: auto auto auto; color: rgba(255, 255, 255, 1); text-decoration: none;
+    }
+        .optFooter:hover {
+            background-color: rgba(255, 255, 255, 0); color: rgba(70, 140, 255, 1);
+        }

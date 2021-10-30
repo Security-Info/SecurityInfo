@@ -1,0 +1,93 @@
+body {
+    font-family:Helvetica; font-size: 15px; background-color: rgba(13, 16, 23, 1); margin:0;
+}
+#blockLogo {
+    margin: 10px 0px 10px; display: flex; text-align: center;
+}
+    .buttonImg {
+        background-color: rgba(0, 0, 0, 0); border: none; cursor: pointer;
+    }
+        #logo {
+            margin: auto; float: left; height: 60px; width: 250px;
+        }
+            .appLogo {
+                margin: auto; float: left;
+            }
+    .blockOut {
+        height: 40px; background-color: rgba(02, 07, 13, 1);
+    }    
+        .out:hover {
+            background-color: rgba(02, 07, 13, 1); border-bottom: 3px solid rgba(0, 70, 185, 1);
+        }
+.blockOption {
+    padding: 0px 0px 0px; display: flex; background-color: rgba(0, 70, 185, 1); height: 40px; border-bottom: 0px solid rgba(255, 255, 255, 1);
+}
+    .optHome {
+        margin: auto; float: left; height: 40px; width: 100px; color: rgba(255, 255, 255, 1); background-color: rgba(0, 0, 0, 0); border: none; cursor: pointer;
+    }
+        .optHome:hover {
+            background-color: rgba(0, 50, 165, 1); border-bottom: 3px solid rgba(255, 255, 255, 1);
+        }
+.blockMain {
+    display: grid; grid-template-columns: 0.6fr 0.2fr 0.2fr; height: 77vh; max-width: 100%;
+}
+    .blockUbi {
+        position: relative; display: flex; flex-direction: column; min-height: 90%; background-color: rgba(33, 36, 43, 1); border-top: 4px solid rgba(13, 16, 23, 1); border-left: 2px solid rgba(13, 16, 23, 1); border-right: 2px solid rgba(13, 16, 23, 1); transition: .5s ease;
+    }
+        .blockSub {
+            width: 100%; margin: 20px auto 20px; text-align: center;
+        }
+            .subtitle {
+                font-weight: bold; color:rgba(255, 255, 255, 1);
+            }
+        .blockMap {
+            background-color:rgba(255, 255, 255, 0);
+        }
+            #map {
+                width: 90%; height: 300px; border: none; border-radius: 20px; border: 2px solid rgba(0, 50, 165, 1);
+            }
+        .blockAddress {
+            margin: 20px auto 10px; text-align: center; height: 28px;
+        }
+            .label {
+                color: rgb(255, 255, 255, 1);
+            }
+                .blockUbi:hover {
+                    background-color: rgb(0, 65, 157, 1);
+                }
+    .blockEmail {
+        position: relative; display: flex; flex-direction: column; min-height: 90%; background-color: rgba(43, 46, 53, 1); border-top: 4px solid rgba(13, 16, 23, 1); border-left: 2px solid rgba(13, 16, 23, 1); border-right: 2px solid rgba(13, 16, 23, 1); transition: .5s ease;
+    }
+        .blockLogContact {            
+            text-align: center;
+        }
+            .logoContact {
+                height: 155px; width: 155px;
+            }
+        .blockInfLbl {
+            margin: 20px auto 10px; text-align: center;
+        }
+            .blockEmail:hover {
+                background-color: rgb(0, 75, 167, 1);
+            }
+    .blockTel {
+        position: relative; display: flex; flex-direction: column; min-height: 90%; background-color: rgba(53, 56, 63, 1); border-top: 4px solid rgba(13, 16, 23, 1); border-left: 2px solid rgba(13, 16, 23, 1); border-right: 4px solid rgba(13, 16, 23, 1); transition: .5s ease;
+    }
+            .blockTel:hover {
+                background-color: rgb(0, 75, 167, 1);
+            }
+    .blockUbi, .blockEmail {
+        display: flex; justify-content: center; align-items: center;
+    }
+    .blockTel {
+        display: flex; justify-content: center; align-items: center;
+    }
+#blockInfo {
+    padding: 23px 0px 24px; margin: 4px auto auto; background-color: rgba(22, 27, 33, 1); border-top: 1px solid rgba(48, 53, 59, 1); text-align: center;
+}
+    .optFooter {
+        padding: 0px 40px 0px; margin: auto auto auto; color: rgba(255, 255, 255, 1); text-decoration: none;
+    }
+        .optFooter:hover {
+            background-color: rgba(255, 255, 255, 0); color: rgba(70, 140, 255, 1);
+        }
