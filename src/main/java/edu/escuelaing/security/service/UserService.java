@@ -28,8 +28,8 @@ public interface UserService {
 
     User findByCorreo( String correo )
             throws UserNotFoundException;
-
-
+    
+    ArrayList<ArrayList<Double>> getZonesStoles(ZoneDto zoneDto);
 
 
 }
