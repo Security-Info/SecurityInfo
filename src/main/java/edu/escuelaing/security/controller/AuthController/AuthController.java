@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Calendar;
 import java.util.Date;
 
-import  static edu.escuelaing.security.utils.Constants.*;
+import static edu.escuelaing.security.utils.Constants.*;
 
 @RestController
 @CrossOrigin(origins = "*", allowedHeaders = "*")
