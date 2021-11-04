@@ -131,7 +131,7 @@ public class UserServiceMongo implements UserService {
 
     public void sendAlert(String email,String descripcion, double lat, double longi) throws MessagingException {
         String remitente = "securtiyinfo98@gmail.com";
-        String clave = "SecurtiyInfo98ieti.";
+        String clave = "SecurtiyInfo98ieti";
         String destino = email;
         Properties props = new Properties();
         props.put("mail.smtp.host", "smtp.gmail.com");
