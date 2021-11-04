@@ -60,7 +60,7 @@ public class UserController {
     }
     
     @GetMapping("/getZones")
-    public ResponseEntity<ArrayList> getZones(@RequestBody ZoneDto zoneDto){
+    public ResponseEntity<ArrayList<ArrayList<Double>>> getZones(@RequestBody ZoneDto zoneDto){
         return ResponseEntity.ok(userService.getZonesStoles(zoneDto));
 
     }
