@@ -90,14 +90,29 @@ public class UserServiceMongo implements UserService {
 
         }
         return contador;
-
-
-
-
-
-
     }
-
+    
+    @Override
+    public ArrayList<ArrayList<Double>> getZonesStoles(ZoneDto zoneDto) {
+        ArrayList<ArrayList<Double>> zonas = new ArrayList<ArrayList<Double>>();
+        double lat = zoneDto.getLatitud();
+        double lang = zoneDto.getLongitud();
+        Zone zona = new Zone(zoneDto);
+        List<Stole> robos = stoleRepository.findAll();
+        for(int i=0; i<robos.size(); i++){
+            Stole indexRobo = robos.get(i);
+            double latRobo = indexRobo.getLatitud();
+            double logRobo = indexRobo.getLongitud();
+            if(zona.verifyStoleZone(latRobo,logRobo)){
+                ArrayList<Double> stoles = new ArrayList<Double>();
+                stoles.add(latRobo);
+                stoles.add(logRobo);
+                zonas.add(stoles);
+            }
+        }
+        return zonas;
+    }
+    
     @Override
     public List<User> userAll() {
         return securityRepository.findAll();
@@ -131,7 +146,7 @@ public class UserServiceMongo implements UserService {
 
     public void sendAlert(String email,String descripcion, double lat, double longi) throws MessagingException {
         String remitente = "securtiyinfo98@gmail.com";
-        String clave = "SecurtiyInfo98ieti.";
+        String clave = "SecurtiyInfo98ieti";
         String destino = email;
         Properties props = new Properties();
         props.put("mail.smtp.host", "smtp.gmail.com");
