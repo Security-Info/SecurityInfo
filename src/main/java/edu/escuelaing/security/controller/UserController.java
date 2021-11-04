@@ -57,5 +57,11 @@ public class UserController {
         return ResponseEntity.ok(userService.verifyStoleZone(zoneDto));
 
     }
+    
+    @GetMapping("/getZones")
+    public ResponseEntity<ArrayList> getZones(@RequestBody ZoneDto zoneDto){
+        return ResponseEntity.ok(userService.getZonesStoles(zoneDto));
+
+    }
 
 }
