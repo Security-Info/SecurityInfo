@@ -44,6 +44,11 @@ public class UserServiceMongo implements UserService {
     public User create(UserDto userDto) {
         return securityRepository.save(new User(userDto));
     }
+    
+    @Override
+    public List<Stole> allStole() {
+        return stoleRepository.findAll();
+    }
 
     @Override
     public Stole createStole(StoleDto stoleDto) throws MessagingException {
