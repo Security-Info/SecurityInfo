@@ -64,5 +64,11 @@ public class UserController {
         return ResponseEntity.ok(userService.getZonesStoles(zoneDto));
 
     }
+    
+    @GetMapping("/allStole")
+    public ResponseEntity<List<Stole>> allStole()
+    {
+        return ResponseEntity.ok( userService.allStole() );
+    }
 
 }
