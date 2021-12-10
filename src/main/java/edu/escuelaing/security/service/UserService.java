@@ -31,6 +31,7 @@ public interface UserService {
             throws UserNotFoundException;
     
     ArrayList<ArrayList<Double>> getZonesStoles(ZoneDto zoneDto);
+    List<Stole> allStole();
 
 
 }
