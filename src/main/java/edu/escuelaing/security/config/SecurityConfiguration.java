@@ -35,6 +35,7 @@ import org.springframework.security.web.authentication.www.BasicAuthenticationFi
                         .permitAll().antMatchers( HttpMethod.GET, "/user/zone" )
                         .permitAll().antMatchers( HttpMethod.GET, "/user/verifyZone" )
                         .permitAll().antMatchers( HttpMethod.GET, "/user/getZones")
+                        .permitAll().antMatchers( HttpMethod.GET, "/user/allStole")
                         .permitAll().anyRequest().authenticated().and().sessionManagement().sessionCreationPolicy(
                         SessionCreationPolicy.STATELESS );
 
